@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Как сделать параллакс-эффект для изображений</title>
+<link media="screen" href="demo/styles/demo.css" type="text/css" rel="stylesheet" />
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" type="text/css" />
+<style>
+body {
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); 
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+}
+img{
+    max-width: 100%;
+    height: auto; 
+	background-color: #f3f4ef;
+    border: 15px solid #dedede;
+}
+.container { 
+    margin: 120px auto;
+    max-width: 640px;
+ }
+.myCSSclass {
+    background-color: rgba(244, 154, 26,.5);
+    color: white;
+    padding: 3em;
+}
+h2 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 25px;
+}
+
+</style>
+</head>
+<body>
+<!--Начало кода используемого для демонстрации -->
+  <div id="controls">
+<div align=right><a class="close" title="Закрыть" onclick="document.getElementById('controls').style.display='none';">X</a></div>
+   <!-- Яндекс.Директ -->
+<div id="yandex_ad"></div>
+<script type="text/javascript">
+(function(w, d, n, s, t) {
+    w[n] = w[n] || [];
+    w[n].push(function() {
+        Ya.Direct.insertInto(84098, "yandex_ad", {
+            ad_format: "direct",
+            type: "240x400",
+            border_type: "block",
+            border_radius: true,
+            site_bg_color: "FFFFFF",
+            header_bg_color: "FEEAC7",
+            bg_color: "FFF9F0",
+            border_color: "FBE5C0",
+            title_color: "0000CC",
+            url_color: "006600",
+            text_color: "000000",
+            hover_color: "0066FF",
+            favicon: true,
+            no_sitelinks: false
+        });
+    });
+    t = d.getElementsByTagName("script")[0];
+    s = d.createElement("script");
+    s.src = "//an.yandex.ru/system/context.js";
+    s.type = "text/javascript";
+    s.async = true;
+    t.parentNode.insertBefore(s, t);
+})(window, document, "yandex_context_callbacks");
+</script>
+</div>
+<table cellpadding="0" cellspacing="0" id="demo_navi">
+  <tr>
+    <td width="220"><a href="/" rel="nofollow" ><div class="logo"><b><font color=#c3e425>RUDE</font>BOX</b></div></a></td><td width="45"><div class="demo">DEMO</div></td>
+	<td style="text-overflow: ellipsis;"><a href="/parallax-effect-for-pictures-website-parazoom" class="go-bottom" rel="nofollow" ><div class="name">Как сделать параллакс-эффект для изображений</div></a></td>
+  </tr>
+</table>
+<div class="container">
+  <h2>Стандартный эффект:</h2>
+  <p><img src="example.jpg" alt="Rudebox web design"></p>
+  <h2>Эффект параллакса с текстом:</h2>
+  <p><img src="example.jpg" alt="Rudebox web design" data-prz-text="true"></p>
+  <h2>Эффект параллакса в объеме:</h2>
+  <p><img src="example.jpg" alt="Rudebox web design" data-prz-tilt="true"
+        data-prz-overflow="visible"
+        data-prz-tilt-x-amount="30"
+        data-prz-tilt-y-amount="20"
+        data-prz-overflow="visible"></p>
+  <h2>С кастомным курсором:</h2>
+  <p><img src="example.jpg" alt="Rudebox web design" data-prz-custom-cursor-icon="maximize.svg"
+        data-prz-custom-cursor-size="100px"></p>
+   <h2>Со слоем и текстом:</h2>
+   <p><img src="example.jpg" alt="Rudebox web design" data-prz-text="true"
+        data-prz-text-position="bottom"
+        data-prz-text-alignment="right"
+        data-prz-text-class="myCSSclass"
+        data-prz-text-content="Rudebox web design"
+        data-prz-text-x-parallax="30"
+        data-prz-text-y-parallax="30"
+        data-prz-text-opacity="0.3"
+        data-prz-text-opacity-hover="1"
+        data-prz-overflow="visible"></p>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js""></script>
+<script src="dist/parazoom.min.js"></script>
+<script>
+  jQuery('img').parazoom();
+</script>
+</body>
+</html>
